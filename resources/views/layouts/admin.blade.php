@@ -24,7 +24,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-dark bg-gradient shadow sticky-top">
                 <div class="container">
                     <a class="navbar-brand p-0" href="{{ url('/') }}">
-                        <img src="{{ asset('storage/logo.png') }}" width="150">
+                        <img src="{{ asset('logo.png') }}" width="150">
                     </a>
                     <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span> Menu
