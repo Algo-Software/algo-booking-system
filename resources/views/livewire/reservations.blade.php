@@ -1,58 +1,64 @@
 <div>
     <div class="container-fluid">
-        <div class="d-flex justify-content-between align-items-center">
-            <h3 class="text-center fw-bold">
-                <x-feathericon-menu/>
-                List of Reservations
-            </h3>
-
-            <button class="btn btn-success btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#store" wire:click="set">
-                <x-feathericon-plus-circle/>
-                Add New Reservation
-            </button>
-
-            <span class="input-group w-25 mb-2">
-                <span class="input-group-text fw-bold">
-                    <x-feathericon-search/>
-                    <span class="text-nowrap">Search Client</span>
+        <div class="row g-2">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <h3 class="text-center fw-bold">
+                    <x-feathericon-menu/>
+                    List of Reservations
+                </h3>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-success btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#store" wire:click="set">
+                    <x-feathericon-plus-circle/>
+                    Add New Reservation
+                </button>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <span class="input-group mb-2">
+                    <span class="input-group-text fw-bold">
+                        <x-feathericon-search/>
+                        <span class="text-nowrap">Search Client</span>
+                    </span>
+                    <input type="text" class="form-control" wire:model="search">
                 </span>
-                <input type="text" class="form-control" wire:model="search">
-            </span>
+            </div>
         </div>
 
-        <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Client's Name</th>
-                    <th>Type of Event</th>
-                    <th>Contact Number</th>
-                    <th>Requested Date</th>
-                    <th class="text-center">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($reservations as $r)
-                <tr>
-                    <td class="fw-bold">{{ $r->reservation_id }}</td>
-                    <td class="text-capitalize">{{ $r->name }}</td>
-                    <td>{{ ucfirst($r->event) }}</td>
-                    <td>{{ $r->contact }}</td>
-                    <td>{{ date('M d, Y', strtotime($r->request_date)) }}</td>
-                    <td class="d-flex justify-content-evenly">
-                        <button class="btn btn-primary btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#store" wire:click="set({{$r->reservation_id}})">
-                            <x-feathericon-edit/>
-                            View or Edit
-                        </button>
-                        <button class="btn btn-danger btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#delete" wire:click="set({{$r->reservation_id}})">
-                            <x-feathericon-trash-2/>
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th class="text-nowrap">Client's Name</th>
+                        <th class="text-nowrap">Type of Event</th>
+                        <th class="text-nowrap">Contact Number</th>
+                        <th class="text-nowrap">Requested Date</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($reservations as $r)
+                    <tr>
+                        <td class="fw-bold">{{ $r->reservation_id }}</td>
+                        <td class="text-capitalize">{{ $r->name }}</td>
+                        <td>{{ ucfirst($r->event) }}</td>
+                        <td>{{ $r->contact }}</td>
+                        <td>{{ date('M d, Y', strtotime($r->request_date)) }}</td>
+                        <td class="d-flex justify-content-evenly">
+                            <button class="btn btn-primary btn-sm fw-bold text-nowrap" data-bs-toggle="modal" data-bs-target="#store" wire:click="set({{$r->reservation_id}})">
+                                <x-feathericon-edit/>
+                                View or Edit
+                            </button>
+                            <button class="btn btn-danger btn-sm fw-bold text-nowrap" data-bs-toggle="modal" data-bs-target="#delete" wire:click="set({{$r->reservation_id}})">
+                                <x-feathericon-trash-2/>
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     
     <!-- Store -->
@@ -130,13 +136,16 @@
                         <span class="p-1 mb-5 small w-100 text-danger">{{ $message }}</span>
                         @enderror
                         
-                        <textarea class="form-control mt-2" placeholder="Address of the Selected Venue..." rows="4"></textarea>
-                        <textarea class="form-control mt-2" placeholder="Special Requests and Instructions by the Client..." rows="4"></textarea>
+                        <textarea class="form-control mt-2" placeholder="Address of the Selected Venue..." rows="4" wire:model="venue"></textarea>
+                        <textarea class="form-control mt-2" placeholder="Special Requests and Instructions by the Client..." rows="4" wire:model="requests"></textarea>
 
                         <div class="input-group mt-2">
                             <span class="input-group-text fw-bold">Assigned Date: </span>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" wire:model="assign_date">
                         </div>
+                        @error('assign_date')
+                        <span class="p-1 mb-5 small w-100 text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="modal-footer">

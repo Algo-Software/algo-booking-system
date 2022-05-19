@@ -64,7 +64,7 @@
                 @yield('content')
             </main>
 
-            <footer class="p-3 bg-dark bg-gradient fixed-bottom">
+            <footer class="p-3 bg-dark bg-gradient fixed-bottom d-none d-sm-block">
                 
             </footer>
         </div>

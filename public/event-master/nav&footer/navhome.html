@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg m-0 p-0" aria-label="Tenth navbar example">
+
+    <div class="container-fluid m-0 p-0">
+
+      <a class="navbar-brand" href="homepage.html"> <img src="assets\homelogo.png" alt=""  title="contrast" class="contrast"></a>
+
+          <button class="navbar-toggler" type="button" style="color:#454545" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="custom-toggler-icon">
+              <span></span>
+            </i>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-lg-end" id="navbarsExample08">
+            
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                  <a class="nav-link" href="homepage.html" style="color: #ffffff;">HOME</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="package.html" style="color: #ffffff;">PACKAGE</a>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " style="color: #ffffff;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  GALLERY
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item " href="picture.html">PICTURE</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item " href="video.html">VIDEOS</a></li>
+                  
+              
+                </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " style="color: #ffffff;" href="services.html">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " style="color: #ffffff;" href="booking.html">BOOKING</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " style="color: #ffffff;" href="aboutus.html">ABOUT US</a>
+              </li>
+      
+          </ul>
+              
+          </div>
+
+
+    </div>
+    
+</nav>
+<style>
+
+  .navbar-brand{
+    margin-left: 20px;
+  }
+  .navbar-nav li{
+    margin: 20px;
+  }
+  .navbar-nav{
+    margin-right: 20px;
+  }
+
+  
+.navbar{
+  position:absolute;
+  width:100%;
+  z-index:10;
+  max-width:100%;
+}
+
+
+.navbar-brand{
+  color: var(--color1);
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  padding-left: 15xp;
+
+}
+
+.navbar-collapse{
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+ul li a{
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+ul li .nav-link{
+  color: var(--color1);
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--color1);
+  width: 0%;
+  content: "";
+  height: 2px;
+}
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 80%;
+  transition: all 0.5s;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+
+
+</style>

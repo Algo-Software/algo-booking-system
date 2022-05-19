@@ -32,8 +32,11 @@ class Reservations extends Component
         'name' => 'required|min:2',
         'event' => 'required',
         'contact' => 'required|numeric',
-        'request_date' => 'required|date',
+        'request_date' => 'required|date|after:tomorrow',
         'guests' => 'nullable|numeric',
+        'venue' => 'nullable',
+        'requests' => 'nullable',
+        'assign_date' => 'nullable|date|after:tomorrow',
     ];
 
     protected $validationAttributes = [
@@ -42,6 +45,9 @@ class Reservations extends Component
         'contact' => 'Contact Number',
         'request_date' => 'Requested Date',
         'guests' => 'Guests',
+        'venue' => 'nullable',
+        'requests' => 'nullable',
+        'assign_date' => 'Assigned Date',
     ];
 
     public function updated($property)
