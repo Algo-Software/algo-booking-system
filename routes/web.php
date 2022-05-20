@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'web/homepage.html');
 
+Route::view('/booking', 'booking')->name('booking');
+
 Auth::routes(['register' => false]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
