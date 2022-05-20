@@ -245,7 +245,7 @@ ul li .nav-link{
                   <h6 class="text-center">READY TO GET IN TOUCH?</h6>
                 <h1 class="text-center">Make an Event Request</h1>
 
-                @livewire('reservations')
+                @livewire('booking')
 
 <!--end of main-->
 
