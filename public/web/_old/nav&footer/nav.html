@@ -1,0 +1,206 @@
+<nav class="navbar navbar-expand-lg p-0 m-0" aria-label="Tenth navbar example">
+
+    <div class="container-fluid p-0 m-0">
+
+      <a class="navbar-brand" href="homepage.html"> <img src="assets\homelogo.png" alt=""  title="contrast" class="contrast"></a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="custom-toggler-icon">
+              <span></span>
+            </i>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-lg-end " id="navbarsExample08">
+            
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                  <a class="nav-link"  style="color:#454545" href="homepage.html">HOME</a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link"  style="color:#454545" href="package.html">PACKAGE</a>
+            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color:#454545" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  GALLERY
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="m-0 p-0 text-center"><a class="dropdown-item" style="color:#454545" href="picture.html">PICTURE</a></li>
+                  <li class="m-0 p-0"><hr class="dropdown-divider"></li>
+                  <li class="m-0 p-0 text-center"><a class="dropdown-item" style="color:#454545" href="video.html">VIDEOS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="color:#454545" href="services.html">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " style="color:#454545" href="/booking">BOOKING</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " style="color:#454545" href="aboutus.html">ABOUT US</a>
+              </li>
+      
+          </ul>
+              
+          </div>
+
+
+    </div>
+    
+</nav>
+
+<style>  
+
+:root {
+  --color1: #F6F6F6;
+  --color2: #E3E3E3;
+  --color3: #818181;
+  --color4: #454545;
+  --color5: #202020;
+}
+
+.navbar-brand img{
+      -webkit-filter: grayscale(5) invert(1);
+       filter: grayscale(5) invert(1);
+       height: 90px; width: 150px;
+      }
+
+
+      .navbar-brand{
+    margin-left: 20px;
+  }
+  .navbar-nav li{
+    margin: 20px;
+  }
+  .navbar-nav{
+    margin-right: 20px;
+  }
+  
+.custom-toggler-icon span {
+  display: block;
+  float: right;
+  width: 40px;
+  height: 2px;
+  background: var(--color4);
+  margin: 8px 0;
+}
+.custom-toggler-icon::after {
+  content: "";
+  float: left;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color4);
+}
+
+.navbar{
+  position:absolute;
+  width:100%;
+  z-index:10;
+  max-width:100%;
+}
+
+
+.dropdown-menu{
+  font-family: 'Montserrat', sans-serif;
+}
+.dropdown-toggle::after {
+    content: none;
+}
+
+ul li .nav-link{
+  color: #454545;
+   font-family: 'Montserrat', sans-serif;
+}
+
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--color4);
+  width: 0%;
+  content: "";
+  height: 2px;
+}
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 80%;
+  transition: all 0.5s;
+}
+
+
+
+/*start of media qurery*/
+@media (max-width: 1399.98px) { 
+  nav{
+  padding-bottom: 10px;
+background-color: var(--color1);
+}
+
+ }
+
+
+@media (max-width: 991.98px) { 
+
+  .navbar-brand img{
+      -webkit-filter: grayscale(5) invert(1);
+       filter: grayscale(5) invert(1);
+       height: 90px; width: 150px;
+      }
+
+
+
+.custom-toggler-icon span {
+background: #454545;
+}
+.custom-toggler-icon::after {
+background: #454545;
+}
+
+
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+
+nav{
+  text-align: center;
+background-color: var(--color1);
+}
+
+ul li .nav-link{
+  color: var(--color4);
+   font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-item{
+  text-align: center;
+}
+
+}
+
+
+
+
+@media (max-width: 576px) { 
+
+
+
+.custom-toggler-icon span {
+ background: var(--color4);
+}
+.custom-toggler-icon::after {
+ background: var(--color4);
+}
+
+
+
+
+}
+</style>

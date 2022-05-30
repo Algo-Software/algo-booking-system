@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>E-events</title>
+    <title>E-EVENTS | Reservations for Parties and Special Events | Elmer Events Daet, Camarines Norte 4600</title>
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     @livewireStyles
 </head>
@@ -240,12 +240,13 @@ ul li .nav-link{
 
       <!--end 0f section-1 -->
 
-      <div class="section-booking-2"> 
+      <div class="section-booking-2 container"> 
 
                   <h6 class="text-center">READY TO GET IN TOUCH?</h6>
                 <h1 class="text-center">Make an Event Request</h1>
 
                 @livewire('booking')
+      </div>
 
 <!--end of main-->
 
@@ -321,7 +322,7 @@ ul li .nav-link{
                       style="width: 60px;  height: 2px"
                       />
                   <p><i class="fas fa-home mr-3"></i>Pan-Philippine Hwy, Daet, Camarines Norte</p>
-                  <p><i class="fas fa-envelope mr-3"></i> cool_djluis@yahoo.com</p>
+                  <p><i class="fas fa-envelope mr-3"></i> elmer@elmerevents.com</p>
                   <p><i class="fas fa-phone mr-3"></i>09773291050</p>
                 </div>
                 <!-- Grid column -->
